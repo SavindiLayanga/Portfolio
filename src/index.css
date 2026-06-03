@@ -1,0 +1,35 @@
+:root {
+  --font-display: "Archivo Black", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: #ffffff;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border: none;
+  min-height: 100dvh;
+  text-align: initial;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
