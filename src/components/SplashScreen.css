@@ -8,7 +8,7 @@
   width: 100%;
   min-height: 100dvh;
   padding: 1.5rem;
-  background: #ffffff;
+  background: url('../assets/images/splash-bg.jpg') center/cover no-repeat;
   cursor: pointer;
   border: none;
   overflow: hidden;
@@ -20,17 +20,16 @@
 }
 
 .splash__role {
-  position: absolute;
-  left: clamp(1.25rem, 5vw, 3.5rem);
-  bottom: clamp(2rem, 8vh, 4.5rem);
+  margin-top: clamp(1rem, 3vh, 2.5rem);
   font-family: var(--font-body);
-  font-size: clamp(0.7rem, 1.4vw, 0.9rem);
-  font-weight: 500;
-  letter-spacing: 0.28em;
+  font-size: clamp(0.8rem, 1.6vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: #c5b4a2;
+  color: #ffffff;
   z-index: 4;
   pointer-events: none;
+  opacity: 0.9;
 }
 
 .splash__stage {
@@ -68,7 +67,7 @@
 .splash__letter {
   font-family: var(--font-display);
   font-weight: 900;
-  color: #000000;
+  color: #ffffff;
   line-height: 0.9;
   display: inline-block;
 }
@@ -81,35 +80,27 @@
   font-size: clamp(3.2rem, 11vw, 8.2rem);
 }
 
+@keyframes windSwayLeft {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-15px) rotate(-15deg); }
+}
+
+@keyframes windSwayRight {
+  0%, 100% { transform: translateY(0) rotate(7deg); }
+  50% { transform: translateY(-15px) rotate(14deg); }
+}
+
 .splash__letter--tilt-left {
-  transform: rotate(-8deg);
+  animation: windSwayLeft 4s ease-in-out infinite;
 }
 
 .splash__letter--tilt-right {
-  transform: rotate(7deg);
-}
-
-.splash__hero {
-  position: relative;
-  z-index: 3;
-  max-height: min(88vh, 700px);
-  width: auto;
-  max-width: min(75vw, 580px);
-  margin-top: clamp(1rem, 4vh, 3rem);
-  object-fit: contain;
-  object-position: center bottom;
-  pointer-events: none;
-  opacity: 0.85;
+  animation: windSwayRight 4s ease-in-out infinite;
 }
 
 @media (max-width: 640px) {
   .splash__row--top .splash__letter,
   .splash__row--bottom .splash__letter {
     font-size: clamp(2.4rem, 10vw, 4rem);
-  }
-
-  .splash__hero {
-    max-width: min(78vw, 320px);
-    margin-top: 3.5rem;
   }
 }
