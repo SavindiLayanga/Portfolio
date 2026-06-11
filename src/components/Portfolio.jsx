@@ -155,16 +155,26 @@ const WavyText = ({ text, delayOffset = 0 }) => (
 );
 
 const softwareSkillsData = [
-  { name: "Adobe Illustrator", short: "Ai", percentage: 90 },
-  { name: "Adobe Photoshop", short: "Ps", percentage: 85 },
-  { name: "Adobe After Effects", short: "Ae", percentage: 75 },
-  { name: "Adobe Premiere Pro", short: "Pr", percentage: 80 },
-  { name: "Blender", short: "Bl", percentage: 70 },
-  { name: "React / Next.js", short: "Re", percentage: 90 },
-  { name: "Node.js & Express", short: "No", percentage: 85 },
-  { name: "HTML & CSS", short: "UI", percentage: 95 },
-  { name: "React Native", short: "Rn", percentage: 80 },
-  { name: "MongoDB", short: "Db", percentage: 75 }
+  { name: "HTML5", short: "H5", percentage: 95 },
+  { name: "Java", short: "Jv", percentage: 85 },
+  { name: "JavaScript", short: "Js", percentage: 90 },
+  { name: "PHP", short: "Ph", percentage: 75 },
+  { name: "TypeScript", short: "Ts", percentage: 85 },
+  { name: "AWS Cloud", short: "Aw", percentage: 75 },
+  { name: "Angular", short: "An", percentage: 80 },
+  { name: "Angular.js", short: "Aj", percentage: 75 },
+  { name: "Bootstrap", short: "Bs", percentage: 90 },
+  { name: "Expo", short: "Ex", percentage: 85 },
+  { name: "Flutter", short: "Fl", percentage: 80 },
+  { name: "JavaFX", short: "Jf", percentage: 75 },
+  { name: "JWT", short: "Jw", percentage: 80 },
+  { name: "Next JS", short: "Nx", percentage: 85 },
+  { name: "NodeJS", short: "Nd", percentage: 85 },
+  { name: "Apache Maven", short: "Mv", percentage: 70 },
+  { name: "MySQL", short: "My", percentage: 85 },
+  { name: "Microsoft SQL Server", short: "Ms", percentage: 75 },
+  { name: "Hibernate", short: "Hb", percentage: 70 },
+  { name: "MongoDB", short: "Mg", percentage: 80 }
 ];
 
 const servicesData = [
@@ -685,20 +695,23 @@ export default function Portfolio() {
               
               <div className="project-modal-body">
                 <img src={selectedProject.image} alt={selectedProject.title} className="project-modal-image" />
-                <h3 className="project-modal-title">{selectedProject.title}</h3>
                 
-                <div className="project-modal-tags">
-                  {selectedProject.tags.map((tag, i) => (
-                    <span key={i} className="project-tag-pill">{tag}</span>
-                  ))}
-                </div>
-                
-                <p className="project-modal-description">{selectedProject.description}</p>
-                
-                <div className="project-modal-links">
-                  <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
-                    View Live Project
-                  </a>
+                <div className="project-modal-info">
+                  <h3 className="project-modal-title">{selectedProject.title}</h3>
+                  
+                  <div className="project-modal-tags">
+                    {selectedProject.tags.map((tag, i) => (
+                      <span key={i} className="project-tag-pill">{tag}</span>
+                    ))}
+                  </div>
+                  
+                  <p className="project-modal-description">{selectedProject.description}</p>
+                  
+                  <div className="project-modal-links">
+                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                      View Live Project
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
