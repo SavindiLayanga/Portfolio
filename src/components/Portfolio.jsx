@@ -271,6 +271,7 @@ export default function Portfolio() {
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedServiceModal, setSelectedServiceModal] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const hoverTimeoutRef = useRef(null);
 
   const handleMouseEnterCard = (service) => {
@@ -342,13 +343,36 @@ export default function Portfolio() {
         <div className="portfolio__brand">
           <img src={saviLogo} alt="Savi" className="brand__logo-img" />
         </div>
-        <nav className="portfolio__nav" aria-label="Primary">
-          <a href="#home" className="active">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+        
+        {/* Hamburger Button for Mobile */}
+        <button 
+          className="hamburger-btn" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle navigation"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            {isMobileMenuOpen ? (
+              <>
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </>
+            )}
+          </svg>
+        </button>
+
+        <nav className={`portfolio__nav ${isMobileMenuOpen ? "open" : ""}`} aria-label="Primary">
+          <a href="#home" className="active" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+          <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+          <a href="#services" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
+          <a href="#skills" onClick={() => setIsMobileMenuOpen(false)}>Skills</a>
+          <a href="#projects" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
+          <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
         </nav>
       </header>
 

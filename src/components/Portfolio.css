@@ -1236,17 +1236,49 @@ section {
   }
 }
 
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dark);
+  padding: 0.5rem;
+}
+
+.hamburger-btn svg {
+  width: 2rem;
+  height: 2rem;
+}
+
 @media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+
   .portfolio__header {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.5rem 5% 0.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 5%;
   }
   
   .portfolio__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(253, 248, 245, 0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
     gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(78, 19, 36, 0.04);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+
+  .portfolio__nav.open {
+    display: flex;
   }
   
   section {
@@ -1256,10 +1288,43 @@ section {
     padding: 3.5rem 6% 4.5rem;
   }
   
-  .hero-section__image-container,
+  .hero-section {
+    padding-top: 5rem;
+    height: auto;
+    min-height: auto;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-section__content {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  
+  .hero-section__title {
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-section__description {
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-section__image-container {
+    width: 100%;
+    height: auto;
+    margin: -4rem auto 0;
+    justify-self: center;
+  }
+
+  .hero__person-img {
+    max-height: 450px;
+    object-position: top;
+  }
+
   .about-section__image-container,
   .expertise-section__image-container {
     width: 70%;
+    height: auto;
     margin: 0 auto;
     justify-self: center;
   }
